@@ -1,59 +1,64 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 12:35:03 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/21 13:20:21 by hlaineka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int     define_length(int n)
+int		define_length(int n)
 {
-    int i;
+	int i;
 
-    i = 1;
-    if (n == t_int_min)
-    {
-        i = i + 2;
-        n = 147483648;
-    }
-    if (n < 0)
-    {
-        i++;
-        n = n * (-1);
-    }
-    while ((n / 10) > 0)
-    {
-        i++;
-        n = n / 10;
-    }
-    return (i);
+	i = 1;
+	if (n == T_INT_MIN)
+	{
+		i = i + 2;
+		n = 147483648;
+	}
+	if (n < 0)
+	{
+		i++;
+		n = n * (-1);
+	}
+	while ((n / 10) > 0)
+	{
+		i++;
+		n = n / 10;
+	}
+	return (i);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    static char     *str;
-    int             i;
-    int             w;
-    int             length;
+	static char	*str;
+	int			w;
 
-    length = define_length(n);
-    str = (char*)malloc(sizeof(char) * length + 1);
-    i = 0;
-    if (n == t_int_min)
-    {
-        str[i] = ('-');
-        i++;
-        str[i] = ('2');
-        n = 147483648;
-    }
-    if (n < 0)
-    {
-        str[i]=('-');
-        i++;
-        n = n * (-1);
-    }
-    w = length - 1;
-    while (n >= 10)
-    {
-        str[w] = ((n % 10) + '0');
-        n = n / 10;
-        w--;
-    }   
-    str[w] = n + '0';
-    str[length] = ('\0');
-    return (str);
-} 
+	str = (char*)malloc(sizeof(char) * (define_length(n) + 1));
+	w = define_length(n) - 1;
+	str[w + 1] = ('\0');
+	if (n == T_INT_MIN)
+	{
+		str[0] = ('-');
+		str[1] = ('2');
+		n = 147483648;
+	}
+	if (n < 0)
+	{
+		str[0] = ('-');
+		n = n * (-1);
+	}
+	while (n >= 10)
+	{
+		str[w--] = ((n % 10) + '0');
+		n = n / 10;
+	}
+	str[w] = n + '0';
+	return (str);
+}

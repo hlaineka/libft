@@ -6,7 +6,7 @@
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 14:08:44 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/17 14:20:43 by hlaineka         ###   ########.fr       */
+/*   Updated: 2019/10/21 13:20:43 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr(int n)
 {
-	if (n == t_int_min)
+	if (n == T_INT_MIN)
 	{
 		ft_putchar('-');
 		ft_putchar('2');
@@ -28,6 +28,6 @@ void	ft_putnbr(int n)
 	if (n >= 10)
 	{
 		ft_putnbr(n / 10);
-	}	
+	}
 	ft_putchar((n % 10) + '0');
 }

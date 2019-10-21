@@ -6,7 +6,7 @@
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 12:06:49 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/17 14:38:50 by hlaineka         ###   ########.fr       */
+/*   Updated: 2019/10/21 13:15:34 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int main (void)
 {
+	
+	
+	//PRINT TESTS
 	//ft_putchar & ft_putstr ft_putendl
 	char	newline;
 	char	*s;
@@ -27,7 +30,7 @@ int main (void)
 	//ft_putnbr
 	int		n;
 
-	n = 346610;
+	n = 34567;
 	ft_putnbr(n);
 
 	//previous but with fd
@@ -36,31 +39,43 @@ int main (void)
 	ft_putendl_fd(s, 1);
 	ft_putnbr_fd(n, 1);
 	ft_putchar_fd(newline, 1);
+
+	
+	//ft_itoa
+	ft_putendl("ITOA:");
+	char *itoa = ft_itoa(n);
+	ft_putstr(itoa);
+	ft_putchar(newline);
+
+
            
-        //strlen
-        ft_putnbr(strlen(s));
+
+
+
+	//LIB C TESTS
+ 	//memset
+	ft_putendl("memset");
+	ft_memset(itoa, '3', 3);
+	ft_putstr(itoa);
+	ft_putchar(newline);
+
+	//strlen
+    ft_putnbr(strlen(s));
 	ft_putchar_fd(newline, 1);
-        ft_putnbr(ft_strlen(s));
+    ft_putnbr(ft_strlen(s));
 	ft_putchar_fd(newline, 1);
 
-        //ft_itoa
-        char *itoa = ft_itoa(n);
-        ft_putstr(itoa);
-		ft_putchar(newline);
-
-        //ft_strdup
-        char *new_str; 
-		new_str = ft_strdup(s);
-        ft_putendl(new_str);
+	//ft_strdup
+	char *new_str; 
+	new_str = ft_strdup(s);
+	ft_putendl(new_str);
 
 	//strcpy
 	char	dest[40];
-	ft_putchar('q');
 	ft_strcpy(dest, itoa);
-	ft_putchar('w');
 	ft_putstr(dest);
 
-
+	
 
 
 
