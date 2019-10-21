@@ -6,7 +6,7 @@
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 12:06:49 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/21 13:15:34 by hlaineka         ###   ########.fr       */
+/*   Updated: 2019/10/21 15:21:35 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,23 @@ int main (void)
 	ft_memset(itoa, '3', 3);
 	ft_putstr(itoa);
 	ft_putchar(newline);
+
+	//bzero
+	ft_putendl("bzero:");
+	ft_bzero(itoa, 3);
+	ft_putendl(itoa);
+
+//memset
+	ft_putendl("memset");
+	ft_memset(itoa, '3', 3);
+	ft_putstr(itoa);
+	ft_putchar(newline);
+
+	//memcpy
+	char	*destination;
+	ft_putendl("memcpy:");
+	ft_memcpy(destination, itoa, ft_strlen(itoa) + 1);
+	ft_putendl(destination);
 
 	//strlen
     ft_putnbr(strlen(s));
