@@ -6,7 +6,7 @@
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 12:06:49 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/21 15:21:35 by hlaineka         ###   ########.fr       */
+/*   Updated: 2019/10/21 16:17:42 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,9 @@ int main (void)
 	char	dest[40];
 	ft_strcpy(dest, itoa);
 	ft_putstr(dest);
+
+	//memccpy
+	
 
 	
 
