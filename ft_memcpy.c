@@ -6,7 +6,7 @@
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:40:43 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/21 16:03:19 by hlaineka         ###   ########.fr       */
+/*   Updated: 2019/10/22 12:49:31 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t num)
 {
-	char		*temp_dest;
-	const char	*temp_src;
+	unsigned char		*temp_dest;
+	unsigned const char	*temp_src;
 
 	temp_dest = dest;
 	temp_src = src;

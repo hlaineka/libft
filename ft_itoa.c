@@ -6,13 +6,13 @@
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:35:03 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/21 13:20:21 by hlaineka         ###   ########.fr       */
+/*   Updated: 2019/10/22 12:37:40 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		define_length(int n)
+static int	define_length(int n)
 {
 	int i;
 
