@@ -6,7 +6,7 @@
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 12:06:49 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/22 13:12:48 by hlaineka         ###   ########.fr       */
+/*   Updated: 2019/10/23 13:59:24 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ int main (void)
 	memcpy(destination, itoa, ft_strlen(itoa) + 1);
 	ft_putendl(destination);
 	ft_memset(destination, '-', 15);
+	destination[14] = '\0';
 	ft_putendl(destination);
 	ft_memcpy(destination, itoa, ft_strlen(itoa) + 1);
 	ft_putendl(destination);
@@ -146,6 +147,51 @@ int main (void)
 	ft_putendl("strcpy:");
 	ft_strcpy(destination, itoa);
 	ft_putendl(destination);
+
+	//strncpy
+	ft_putendl("strncpy:");
+	char strncpy1[15] = "random string!";
+	char *strncpy2;
+	strncpy2 = (char*)malloc(sizeof(char) * 15);
+	strncpy2 = ft_strncpy(strncpy2, strncpy1, 15);
+	ft_putendl(strncpy2);
+	char *strncpy3;
+	strncpy3 = (char*)malloc(sizeof(char) * 15); 
+	strncpy3 = strncpy(strncpy3, strncpy1, 15);
+	ft_putendl(strncpy3);
+	ft_memset(strncpy2, '-', 15);
+	strncpy2[14] = '\0';
+	ft_memset(strncpy3, '-', 15);
+	strncpy3[14] = '\0';
+	strncpy2 = ft_strncpy(strncpy2, strncpy1, 6);
+	ft_putendl(strncpy2);
+	strncpy3 = strncpy(strncpy3, strncpy1, 6);
+	ft_putendl(strncpy3);
+
+	//strcat
+	ft_putendl("strcat:");
+	char *strcat_dest;
+	char *strcat_src1;
+	char *strcat_src2;
+	char *strcat_src3;
+
+	strcat_dest = (char*)malloc(sizeof(char) * 40);
+	strcat_src1 = (char*)malloc(sizeof(char) * 10);
+	strcat_src2 = (char*)malloc(sizeof(char) * 10);
+	strcat_src3 = (char*)malloc(sizeof(char) * 10);
+
+	strcpy(strcat_dest, "This is t");
+	strcpy(strcat_src1, "esting if");
+	strcpy(strcat_src2, " your str");
+	strcpy(strcat_src3, "cat works");
+
+	ft_strcat(strcat_dest, strcat_src1);
+	ft_strcat(strcat_dest, strcat_src2);
+	ft_strcat(strcat_dest, strcat_src3);
+
+	ft_putendl(strcat_dest);
+
+
 
 	//memccpy
 	ft_putendl("memccpy:");
@@ -173,8 +219,40 @@ int main (void)
 	ft_memmove(itoa + 2, itoa, 10);
 	ft_putendl(itoa);
 
-	
+	//memcmp
+	ft_putendl("memcmp:");
+	char str1[15] = "DWgaOtP12df0";
+	char str2[15] = "DWGAOTP12DF0";
+	int number = memcmp(str1, str2, 15);
+	ft_putnbr(number);
+	ft_putchar(newline);
+	int number2 = memcmp(str1, str2, 15);
+	ft_putnbr(number2);
+	ft_putchar(newline);	
 
+	char str3[15] = "qwertyuiop";
+	char str4[15] = "qwertyuiop";
+	int number3 = memcmp(str3, str4, 11);
+	ft_putnbr(number3);
+	ft_putchar(newline);
+	int number4 = memcmp(str3, str4, 11);
+	ft_putnbr(number4);
+	ft_putchar(newline);
+
+	char str5[15] = "1337";
+	char str6[15] = "7331";
+	int number5 = memcmp(str5, str6, 15);
+	ft_putnbr(number5);
+	ft_putchar(newline);
+	int number6 = memcmp(str5, str6, 15);
+	ft_putnbr(number6);
+	ft_putchar(newline);
+
+
+
+
+
+	
 
 
 

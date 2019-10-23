@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 12:34:39 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/23 12:24:33 by hlaineka         ###   ########.fr       */
+/*   Created: 2019/10/23 11:41:49 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/23 13:32:00 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+char *ft_strncpy(char *dest, const char *src, size_t num)
 {
-	int i;
+	unsigned int		i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (src[i] != '\0' && i < num)
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	while (i < num)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }

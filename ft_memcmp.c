@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 12:34:39 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/23 12:24:33 by hlaineka         ###   ########.fr       */
+/*   Created: 2019/10/23 10:31:36 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/23 11:40:44 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+int	ft_memcmp (const void *ptr1, const void *ptr2, size_t num)
 {
-	int i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	const unsigned char	*temp_ptr1;
+	const unsigned char *temp_ptr2;
+	
+	temp_ptr1 = ptr1;
+	temp_ptr2 = ptr2;
+	if (num <= 1)
+		return (temp_ptr2[0] - temp_ptr1[0]);
+	else if (temp_ptr2[0] == temp_ptr2[0])
+		return (ft_memcmp(&ptr1[1], &ptr2[1], num - 1));
+	else 
+		return (temp_ptr2[0] - temp_ptr1[0]);
 }

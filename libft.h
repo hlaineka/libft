@@ -6,7 +6,7 @@
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 11:58:27 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/22 13:10:25 by hlaineka         ###   ########.fr       */
+/*   Updated: 2019/10/23 13:46:13 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,8 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t num);
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t num);
+int		ft_memcmp(const void *ptr1, const void *ptr2, size_t num);
+char	*ft_strncpy(char *dest, const char *src, size_t num);
+char	*ft_strcat(char *dest, const char *src);
 
 #endif
