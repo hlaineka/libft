@@ -38,5 +38,12 @@ void	*ft_memmove(void *dest, const void *src, size_t num);
 int		ft_memcmp(const void *ptr1, const void *ptr2, size_t num);
 char	*ft_strncpy(char *dest, const char *src, size_t num);
 char	*ft_strcat(char *dest, const char *src);
+void	*ft_memchr(const void *ptr, int c, size_t num);
+char	*ft_strncat(char *dest, const char *src, size_t num);
+size_t	ft_strlcat(char *dest, const char *src, size_t size);
+char	*ft_strchr(const char *src, int c);
+char	*ft_strrchr(const char *src, int c);
+char	*ft_strstr(const char *str1, const char *str2);
+char	*ft_strnstr(const char *str1, const char *str2, size_t n);
 
 #endif
