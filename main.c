@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ctype.h"
 
 int main (void)
 {
@@ -99,10 +100,76 @@ int main (void)
 	ft_putchar(newline);
 	ft_putchar(newline);
 
+	//atoi
+	ft_putendl("atoi:");
+	char	*atoi1;
+	char	*atoi2;
+	char	*atoi3;
+	char	*atoi4;
+	char	*atoi5;
+	char	*atoi6;
+	char	*atoi7;
+	int		atoi_result;
+	
+	atoi1 = ft_itoa(0);
+	atoi2 = ft_itoa(1);
+	atoi3 = ft_itoa(-1);
+	atoi4 = ft_itoa(526410);
+	atoi5 = ft_itoa(-526410);
+	atoi6 = ft_itoa(T_INT_MIN);
+	atoi7 = ft_itoa(T_INT_MAX);
+	atoi_result = atoi(atoi1);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+	atoi_result = ft_atoi(atoi1);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
 
-           
+	
+    atoi_result = atoi(atoi2);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+	atoi_result = ft_atoi(atoi2);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
 
 
+	atoi_result = atoi(atoi3);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+	atoi_result = ft_atoi(atoi3);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+
+
+	atoi_result = atoi(atoi4);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+	atoi_result = ft_atoi(atoi4);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+
+	atoi_result = atoi(atoi5);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+	atoi_result = ft_atoi(atoi5);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+
+	atoi_result = atoi(atoi6);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+	atoi_result = ft_atoi(atoi6);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+
+	atoi_result = atoi(atoi7);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+	atoi_result = ft_atoi(atoi7);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+	ft_putchar(newline);
 
 	//LIB C TESTS
  	//memset
@@ -294,6 +361,116 @@ int main (void)
 	ft_putendl(found);
 	ft_putchar(newline);	
 	
+	//strcmp
+	ft_putendl("strcmp:");
+	char	*strcmp1;
+	char	*strcmp2;
+	int		strcmp_int;
+	
+	strcmp1 = (char*)malloc(sizeof(char) * 100);
+	strcmp2 = (char*)malloc(sizeof(char) * 100);
+	strcmp1 = "qwertyu";
+	strcmp2 = "qwertyy";
+	strcmp_int = strcmp(strcmp1, strcmp2);
+	ft_putnbr(strcmp_int);
+	ft_putchar(newline);
+	strcmp_int = ft_strcmp(strcmp1, strcmp2);
+	ft_putnbr(strcmp_int);
+	ft_putchar(newline);
+	
+	strcmp1 = "";
+	strcmp2 = "qwertyy";
+	strcmp_int = strcmp(strcmp1, strcmp2);
+	ft_putnbr(strcmp_int);
+	ft_putchar(newline);
+	strcmp_int = ft_strcmp(strcmp1, strcmp2);
+	ft_putnbr(strcmp_int);
+	ft_putchar(newline);
+
+	strcmp1 = "qwertyu";
+	strcmp2 = "";
+	strcmp_int = strcmp(strcmp1, strcmp2);
+	ft_putnbr(strcmp_int);
+	ft_putchar(newline);
+	strcmp_int = ft_strcmp(strcmp1, strcmp2);
+	ft_putnbr(strcmp_int);
+	ft_putchar(newline);
+
+	strcmp1 = "qwertyu";
+	strcmp2 = "qwertyu";
+	strcmp_int = strcmp(strcmp1, strcmp2);
+	ft_putnbr(strcmp_int);
+	ft_putchar(newline);
+	strcmp_int = ft_strcmp(strcmp1, strcmp2);
+	ft_putnbr(strcmp_int);
+	ft_putchar(newline);
+
+	strcmp1 = "qwertyy";
+	strcmp2 = "qwertyu";
+	strcmp_int = strcmp(strcmp1, strcmp2);
+	ft_putnbr(strcmp_int);
+	ft_putchar(newline);
+	strcmp_int = ft_strcmp(strcmp1, strcmp2);
+	ft_putnbr(strcmp_int);
+	ft_putchar(newline);
+
+	ft_putchar(newline);
+
+	//strncmp
+	ft_putendl("strncmp:");
+	char	*strncmp1;
+	char	*strncmp2;
+	int		strncmp_int;
+	
+	strncmp1 = (char*)malloc(sizeof(char) * 100);
+	strncmp2 = (char*)malloc(sizeof(char) * 100);
+	strncmp1 = "qwertyu";
+	strncmp2 = "qweryy";
+	strncmp_int = strncmp(strncmp1, strncmp2, 5);
+	ft_putnbr(strncmp_int);
+	ft_putchar(newline);
+	strncmp_int = ft_strncmp(strncmp1, strncmp2, 5);
+	ft_putnbr(strncmp_int);
+	ft_putchar(newline);
+	
+	strncmp1 = "";
+	strncmp2 = "qwertyy";
+	strncmp_int = strncmp(strncmp1, strncmp2, 5);
+	ft_putnbr(strncmp_int);
+	ft_putchar(newline);
+	strncmp_int = ft_strncmp(strncmp1, strncmp2, 5);
+	ft_putnbr(strncmp_int);
+	ft_putchar(newline);
+
+	strncmp1 = "qwertyu";
+	strncmp2 = "";
+	strncmp_int = strncmp(strncmp1, strncmp2, 5);
+	ft_putnbr(strncmp_int);
+	ft_putchar(newline);
+	strncmp_int = ft_strncmp(strncmp1, strncmp2, 5);
+	ft_putnbr(strncmp_int);
+	ft_putchar(newline);
+
+	strncmp1 = "qwertyu";
+	strncmp2 = "qwertyu";
+	strncmp_int = strncmp(strncmp1, strncmp2, 10);
+	ft_putnbr(strncmp_int);
+	ft_putchar(newline);
+	strncmp_int = ft_strncmp(strncmp1, strncmp2, 10);
+	ft_putnbr(strncmp_int);
+	ft_putchar(newline);
+
+	strncmp1 = "qwertyy";
+	strncmp2 = "qwertyu";
+	strncmp_int = strncmp(strncmp1, strncmp2, 5);
+	ft_putnbr(strncmp_int);
+	ft_putchar(newline);
+	strncmp_int = ft_strncmp(strncmp1, strncmp2, 5);
+	ft_putnbr(strncmp_int);
+	ft_putchar(newline);
+
+	ft_putchar(newline);
+
 
 	//memccpy
 	ft_putendl("memccpy:");
@@ -366,16 +543,208 @@ int main (void)
 	ft_putchar(newline);
 	ft_putchar(newline);
 
+	//islapha
+	ft_putendl("isalpha:");
+	int	alpha1;
+	int alpha_result;
 
-
-
-
-
+	alpha1 = 'a';
+	alpha_result = isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(',');
+	alpha_result = ft_isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(' ');
 	
 
+	alpha1 = 'A';
+	alpha_result = isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(',');
+	alpha_result = ft_isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(' ');
 
+	alpha1 = 'z';
+	alpha_result = isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(',');
+	alpha_result = ft_isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(' ');
 
+	alpha1 = 'Z';
+	alpha_result = isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(',');
+	alpha_result = ft_isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(' ');
 
+	alpha1 = 1337;
+	alpha_result = isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(',');
+	alpha_result = ft_isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(' ');
+
+	alpha1 = -23;
+	alpha_result = isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(',');
+	alpha_result = ft_isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(' ');
+
+	alpha1 = '@';
+	alpha_result = isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(',');
+	alpha_result = ft_isalpha(alpha1);
+	ft_putnbr(alpha_result);
+	ft_putchar(' ');
+	ft_putchar(newline);
+	ft_putchar(newline);
+
+	//isdigit
+	int	is_digit;
+	int digit_result;
+
+	ft_putendl("isdigit:");
+	is_digit = '0';
+	digit_result = isdigit(is_digit);
+	ft_putnbr(digit_result);
+	ft_putchar(',');
+	digit_result = ft_isdigit(is_digit);
+	ft_putnbr(digit_result);
+	ft_putchar(' ');
+	
+	is_digit = '9';
+	digit_result = isdigit(is_digit);
+	ft_putnbr(digit_result);
+	ft_putchar(',');
+	digit_result = ft_isdigit(is_digit);
+	ft_putnbr(digit_result);
+	ft_putchar(' ');
+
+	is_digit = '/';
+	digit_result = isdigit(is_digit);
+	ft_putnbr(digit_result);
+	ft_putchar(',');
+	digit_result = ft_isdigit(is_digit);
+	ft_putnbr(digit_result);
+	ft_putchar(' ');
+
+	is_digit = ':';
+	digit_result = isdigit(is_digit);
+	ft_putnbr(digit_result);
+	ft_putchar(',');
+	digit_result = ft_isdigit(is_digit);
+	ft_putnbr(digit_result);
+	ft_putchar(newline);
+	ft_putchar(newline);
+
+	//isalnum
+	ft_putendl("isalnum:");
+	alpha1 = 'a';
+	digit_result = isalnum(alpha1);
+	ft_putnbr(digit_result);
+	ft_putchar(',');
+	digit_result = ft_isalnum(alpha1);
+	ft_putnbr(digit_result);
+	ft_putchar(' ');
+
+	alpha1 = '[';
+	digit_result = isalnum(alpha1);
+	ft_putnbr(digit_result);
+	ft_putchar(',');
+	digit_result = ft_isalnum(alpha1);
+	ft_putnbr(digit_result);
+	ft_putchar(' ');
+
+	is_digit = 4;
+	digit_result = isalnum(is_digit);
+	ft_putnbr(digit_result);
+	ft_putchar(',');
+	digit_result = ft_isalnum(is_digit);
+	ft_putnbr(digit_result);
+	ft_putchar(newline);
+	ft_putchar(newline);
+	
+	//isascii
+	ft_putendl("isascii:");
+	int is_ascii;
+	int	ascii_result;
+
+	is_ascii = -1;
+	ascii_result = isascii(is_ascii);
+	ft_putnbr(ascii_result);
+	ft_putchar(',');
+	ascii_result = ft_isascii(is_ascii);
+	ft_putnbr(ascii_result);
+	ft_putchar(' ');
+
+	is_ascii = 0;
+	ascii_result = isascii(is_ascii);
+	ft_putnbr(ascii_result);
+	ft_putchar(',');
+	ascii_result = ft_isascii(is_ascii);
+	ft_putnbr(ascii_result);
+	ft_putchar(' ');
+
+	is_ascii = 127;
+	ascii_result = isascii(is_ascii);
+	ft_putnbr(ascii_result);
+	ft_putchar(',');
+	ascii_result = ft_isascii(is_ascii);
+	ft_putnbr(ascii_result);
+	ft_putchar(' ');
+
+	is_ascii = 128;
+	ascii_result = isascii(is_ascii);
+	ft_putnbr(ascii_result);
+	ft_putchar(',');
+	ascii_result = ft_isascii(is_ascii);
+	ft_putnbr(ascii_result);
+	ft_putchar(' ');
+	ft_putchar(newline);
+	ft_putchar(newline);
+
+	//isprint
+	ft_putendl("isprint:");
+	int	is_print;
+	int print_result;
+	
+	is_print = 0;
+	while (is_print < 129)
+	{
+		print_result = isprint(is_print);
+		ft_putnbr(print_result);
+		ft_putchar(',');
+		print_result = ft_isprint(is_print);
+		ft_putnbr(print_result);
+		ft_putchar(' ');
+		is_print++;
+	}
+	ft_putchar(newline);
+	ft_putchar(newline);
+
+	//toupper
+	ft_putendl("toupper:");
+	int	to_upper = 96;
+	int	upper_result;
+	//char upper_char;
+
+	while (to_upper < 126)
+	{
+	upper_result = ft_toupper(to_upper);
+	ft_putchar(upper_result);
+	ft_putstr(", ");
+	to_upper++;
+	}
+	ft_putchar(newline);
+	ft_putchar(newline);
 
 
 }
