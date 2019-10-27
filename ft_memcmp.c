@@ -19,10 +19,10 @@ int	ft_memcmp (const void *ptr1, const void *ptr2, size_t num)
 	
 	temp_ptr1 = ptr1;
 	temp_ptr2 = ptr2;
-	if (num <= 1)
-		return (temp_ptr2[0] - temp_ptr1[0]);
-	else if (temp_ptr2[0] == temp_ptr2[0])
+	if (num == 0)
+		return (0);
+	if (temp_ptr1[0] != temp_ptr2[0] || num == 1)
+		return (temp_ptr1[0] - temp_ptr2[0]);
+	else
 		return (ft_memcmp(&ptr1[1], &ptr2[1], num - 1));
-	else 
-		return (temp_ptr2[0] - temp_ptr1[0]);
 }

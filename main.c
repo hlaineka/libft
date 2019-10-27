@@ -109,6 +109,7 @@ int main (void)
 	char	*atoi5;
 	char	*atoi6;
 	char	*atoi7;
+	char	*atoi8;
 	int		atoi_result;
 	
 	atoi1 = ft_itoa(0);
@@ -118,6 +119,7 @@ int main (void)
 	atoi5 = ft_itoa(-526410);
 	atoi6 = ft_itoa(T_INT_MIN);
 	atoi7 = ft_itoa(T_INT_MAX);
+	atoi8 = "+-54";
 	atoi_result = atoi(atoi1);
 	ft_putnbr(atoi_result);
 	ft_putchar(newline);
@@ -167,6 +169,13 @@ int main (void)
 	ft_putnbr(atoi_result);
 	ft_putchar(newline);
 	atoi_result = ft_atoi(atoi7);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+
+	atoi_result = atoi(atoi8);
+	ft_putnbr(atoi_result);
+	ft_putchar(newline);
+	atoi_result = ft_atoi(atoi8);
 	ft_putnbr(atoi_result);
 	ft_putchar(newline);
 	ft_putchar(newline);
@@ -295,7 +304,25 @@ int main (void)
 	ft_putnbr(strlcat_return);
 	ft_putchar(newline);
 	ft_putendl(strcat_dest);
+
+	ft_memset(strcat_dest, 0, 15);
+	ft_memset(strcat_dest, 'r', 6);
+	strcat_dest[11] = 'a';
+	strlcat_return = ft_strlcat(strcat_dest, "lorem", 15);
+	ft_putnbr(strlcat_return);
 	ft_putchar(newline);
+	ft_putendl(strcat_dest);
+	ft_putchar(newline);
+
+	ft_memset(strcat_dest, 0, 15);
+	ft_memset(strcat_dest, 'r', 6);
+	strcat_dest[11] = 'a';
+	strlcat_return = strlcat(strcat_dest, "lorem", 15);
+	ft_putnbr(strlcat_return);
+	ft_putchar(newline);
+	ft_putendl(strcat_dest);
+	ft_putchar(newline);
+	
 	
 	//strchr
 	ft_putendl("strchr:");
@@ -414,6 +441,15 @@ int main (void)
 	ft_putnbr(strcmp_int);
 	ft_putchar(newline);
 
+	strcmp1 = "test\200";
+	strcmp2 = "test\0";
+	strcmp_int = strcmp(strcmp1, strcmp2);
+	ft_putnbr(strcmp_int);
+	ft_putchar(newline);
+	strcmp_int = ft_strcmp(strcmp1, strcmp2);
+	ft_putnbr(strcmp_int);
+	ft_putchar(newline);
+
 	ft_putchar(newline);
 
 	//strncmp
@@ -520,7 +556,7 @@ int main (void)
 	int number = memcmp(str1, str2, 15);
 	ft_putnbr(number);
 	ft_putchar(newline);
-	int number2 = memcmp(str1, str2, 15);
+	int number2 = ft_memcmp(str1, str2, 15);
 	ft_putnbr(number2);
 	ft_putchar(newline);	
 
@@ -529,7 +565,7 @@ int main (void)
 	int number3 = memcmp(str3, str4, 11);
 	ft_putnbr(number3);
 	ft_putchar(newline);
-	int number4 = memcmp(str3, str4, 11);
+	int number4 = ft_memcmp(str3, str4, 11);
 	ft_putnbr(number4);
 	ft_putchar(newline);
 
@@ -538,7 +574,17 @@ int main (void)
 	int number5 = memcmp(str5, str6, 15);
 	ft_putnbr(number5);
 	ft_putchar(newline);
-	int number6 = memcmp(str5, str6, 15);
+	int number6 = ft_memcmp(str5, str6, 15);
+	ft_putnbr(number6);
+	ft_putchar(newline);
+	ft_putchar(newline);
+
+	char str7[20] = "zyxbcdefgh";
+	char str8[20] = "abcdefgxyz";
+	number5 = memcmp(str7, str8, 0);
+	ft_putnbr(number5);
+	ft_putchar(newline);
+	number6 = ft_memcmp(str7, str8, 0);
 	ft_putnbr(number6);
 	ft_putchar(newline);
 	ft_putchar(newline);
@@ -734,8 +780,6 @@ int main (void)
 	ft_putendl("toupper:");
 	int	to_upper = 96;
 	int	upper_result;
-	//char upper_char;
-
 	while (to_upper < 126)
 	{
 	upper_result = ft_toupper(to_upper);
@@ -746,5 +790,18 @@ int main (void)
 	ft_putchar(newline);
 	ft_putchar(newline);
 
+	//tolower
+	ft_putendl("tolower:");
+	int	to_lower = 63;
+	int lower_result;
+	while (to_lower < 93)
+	{
+		lower_result = ft_tolower(to_lower);
+		ft_putchar(lower_result);
+		ft_putstr(", ");
+		to_lower++;
+	}
+	ft_putchar(newline);
+	ft_putchar(newline);
 
 }
