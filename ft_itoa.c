@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** turns intiger value to char*
+*/
+
 static int	define_length(int n)
 {
 	int i;
@@ -35,7 +39,7 @@ static int	define_length(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	static char	*str;
 	int			w;

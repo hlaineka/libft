@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** sets num amount of bytes of ptr to value.
+*/
+
 void	*ft_memset(void *ptr, int value, size_t num)
 {
 	unsigned char	*temp;

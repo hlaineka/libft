@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** prints int n to fd
+*/
+
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == T_INT_MIN)

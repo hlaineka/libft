@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** prints string s to fd with a newline
+*/
+
 void	ft_putendl_fd(char const *s, int fd)
 {
 	ft_putstr_fd(s, fd);

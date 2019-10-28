@@ -1,4 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 12:12:38 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/28 12:12:45 by hlaineka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
+/*
+** compares str1 to str2 and return 0 if they are aqual or int representing
+** the difference.
+*/
 
 int	ft_strcmp(const char *str1, const char *str2)
 {

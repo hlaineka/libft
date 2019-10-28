@@ -1,46 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 12:32:47 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/28 13:52:36 by hlaineka         ###   ########.fr       */
+/*   Created: 2019/10/28 16:42:08 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/28 17:22:31 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** copies num characters from dest to src. works also on overlapping memory
-** areas
-*/
-
-void	*ft_memmove(void *dest, const void *src, size_t num)
+char	*ft_strmap(const char *s, char(*f)(char))
 {
-	unsigned char		*temp_dest;
-	unsigned const char	*temp_src;
-	unsigned int		i;
+	int		i;
+	char	*returnable;
 
-	temp_dest = dest;
-	temp_src = src;
 	i = 0;
-	if (temp_dest < temp_src)
+	returnable = ft_strnew(ft_strlen(s));
+	if (s && returnable && f)
+
 	{
-		while (i < num)
+		while (s[i] != '\0')
 		{
-			temp_dest[i] = temp_src[i];
+			returnable[i] = f(s[i]);
 			i++;
 		}
 	}
-	else
-	{
-		while (num > 0)
-		{
-			temp_dest[num - 1] = temp_src[num - 1];
-			num--;
-		}
-	}
-	return (dest);
+	return (returnable);
 }

@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** returns how many bytes C string s has
+*/
+
 size_t	ft_strlen(char const *s)
 {
 	int	i;

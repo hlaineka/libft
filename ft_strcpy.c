@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** copies string src to dest. Does not check sizes or anything else
+*/
+
 char	*ft_strcpy(char *dest, const char *src)
 {
 	int i;

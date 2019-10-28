@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+** copies no more than n bytes from memory are src to dest, stopping when
+** char c is found
+*/
+
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	unsigned char			*temp_dest;
@@ -27,7 +32,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	{
 		temp_dest[i] = temp_src[i];
 		if (temp_src[i] == temp_c)
-			return(&dest[i + 1]);
+			return (&dest[i + 1]);
 		i++;
 	}
 	return (NULL);

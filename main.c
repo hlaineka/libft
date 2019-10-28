@@ -6,12 +6,37 @@
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 12:06:49 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/23 13:59:24 by hlaineka         ###   ########.fr       */
+/*   Updated: 2019/10/28 11:06:14 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ctype.h"
+
+void iter_tester(char *s)
+{
+	*s = *s - ('a' - 'A');
+}
+
+char map_tester(char s)
+{
+	return (s - ('a' - 'A'));
+}
+
+void iteri_tester(unsigned int num, char *s)
+{
+	if (num % 2 == 0)
+	{
+		*s = *s -('a' - 'A');
+	}
+}
+
+char mapi_tester(unsigned int i, char s)
+{
+	if (i % 2 == 0)
+		return (s - ('a' - 'A'));
+	return(s);
+}
 
 int main (void)
 {
@@ -305,6 +330,7 @@ int main (void)
 	ft_putchar(newline);
 	ft_putendl(strcat_dest);
 
+	//1
 	ft_memset(strcat_dest, 0, 15);
 	ft_memset(strcat_dest, 'r', 6);
 	strcat_dest[11] = 'a';
@@ -312,7 +338,6 @@ int main (void)
 	ft_putnbr(strlcat_return);
 	ft_putchar(newline);
 	ft_putendl(strcat_dest);
-	ft_putchar(newline);
 
 	ft_memset(strcat_dest, 0, 15);
 	ft_memset(strcat_dest, 'r', 6);
@@ -322,7 +347,78 @@ int main (void)
 	ft_putchar(newline);
 	ft_putendl(strcat_dest);
 	ft_putchar(newline);
+
+	//2
+	ft_memset(strcat_dest, 0, 15);
+	ft_memset(strcat_dest, 'r', 6);
+	strcat_dest[11] = 'a';
+	strlcat_return = ft_strlcat(strcat_dest, "lorem ipsum dolor sit amet", 15);
+	ft_putnbr(strlcat_return);
+	ft_putchar(newline);
+	ft_putendl(strcat_dest);
 	
+	ft_memset(strcat_dest, 0, 15);
+	ft_memset(strcat_dest, 'r', 6);
+	strcat_dest[11] = 'a';
+	strlcat_return = strlcat(strcat_dest, "lorem ipsum dolor sit amet", 15);
+	ft_putnbr(strlcat_return);
+	ft_putchar(newline);
+	ft_putendl(strcat_dest);
+	ft_putchar(newline);
+	
+	//3
+	ft_memset(strcat_dest, 0, 15);
+	ft_memset(strcat_dest, 'r', 6);
+	strcat_dest[10] = 'a';
+	strlcat_return = ft_strlcat(strcat_dest, "lorem ipsum dolor sit amet", 0);
+	ft_putnbr(strlcat_return);
+	ft_putchar(newline);
+	ft_putendl(strcat_dest);
+	
+	ft_memset(strcat_dest, 0, 15);
+	ft_memset(strcat_dest, 'r', 6);
+	strcat_dest[10] = 'a';
+	strlcat_return = strlcat(strcat_dest, "lorem ipsum dolor sit amet", 0);
+	ft_putnbr(strlcat_return);
+	ft_putchar(newline);
+	ft_putendl(strcat_dest);
+	ft_putchar(newline);
+
+	//4
+	ft_memset(strcat_dest, 0, 15);
+	ft_memset(strcat_dest, 'r', 6);
+	strcat_dest[10] = 'a';
+	strlcat_return = ft_strlcat(strcat_dest, "lorem ipsum dolor sit amet", 1);
+	ft_putnbr(strlcat_return);
+	ft_putchar(newline);
+	ft_putendl(strcat_dest);
+	
+	ft_memset(strcat_dest, 0, 15);
+	ft_memset(strcat_dest, 'r', 6);
+	strcat_dest[10] = 'a';
+	strlcat_return = strlcat(strcat_dest, "lorem ipsum dolor sit amet", 1);
+	ft_putnbr(strlcat_return);
+	ft_putchar(newline);
+	ft_putendl(strcat_dest);
+	ft_putchar(newline);
+	
+	//5
+	ft_memset(strcat_dest, 0, 15);
+	ft_memset(strcat_dest, 'r', 15);
+	strcat_dest[11] = 'a';
+	strlcat_return = ft_strlcat(strcat_dest, "lorem ipsum dolor sit amet", 5);
+	ft_putnbr(strlcat_return);
+	ft_putchar(newline);
+	ft_putendl(strcat_dest);
+	
+	ft_memset(strcat_dest, 0, 15);
+	ft_memset(strcat_dest, 'r', 15);
+	strcat_dest[11] = 'a';
+	strlcat_return = strlcat(strcat_dest, "lorem ipsum dolor sit amet", 5);
+	ft_putnbr(strlcat_return);
+	ft_putchar(newline);
+	ft_putendl(strcat_dest);
+	ft_putchar(newline);
 	
 	//strchr
 	ft_putendl("strchr:");
@@ -803,5 +899,58 @@ int main (void)
 	}
 	ft_putchar(newline);
 	ft_putchar(newline);
+
+	//striter
+	ft_putendl("striter:");
+	char 	*iter_s;
+	void (*f)(char*);
+
+	f = &iter_tester;
+	iter_s = ft_strnew(50);
+	ft_strcpy(iter_s, "testingstriter");
+	ft_putendl(iter_s);
+	ft_striter(iter_s, f);
+	ft_putendl(iter_s);
+	ft_putchar(newline);
+
+	//striteri
+	ft_putendl("striteri:");
+	char 	*iteri_s;
+	void (*fi)(unsigned int, char*);
+
+	fi = &iteri_tester;
+	iteri_s = ft_strnew(50);
+	ft_strcpy(iteri_s, "testingstriteri");
+	ft_putendl(iteri_s);
+	ft_striteri(iteri_s, fi);
+	ft_putendl(iteri_s);
+	ft_putchar(newline);
+
+	//strmap
+	ft_putendl("strmap:");
+	char 	*map_s;
+	char (*m)(char);
+	char *map_return;
+
+	m = &map_tester;
+	map_s = ft_strnew(50);
+	ft_strcpy(map_s, "testingstrmap");
+	ft_putendl(map_s);
+	map_return = ft_strmap(map_s, m);
+	ft_putendl(map_return);
+	ft_putchar(newline);
+
+	//strmapi
+	ft_putendl("strmapi:");
+	char 	*mapi_s;
+	char (*mi)(unsigned int, char);
+	char *mapi_return;
+
+	mi = &mapi_tester;
+	mapi_s = ft_strnew(50);
+	ft_strcpy(mapi_s, "testingstrmapi");
+	ft_putendl(mapi_s);
+	mapi_return = ft_strmapi(mapi_s, mi);
+	ft_putendl(mapi_return);
 
 }

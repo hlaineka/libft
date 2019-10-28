@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** creates a new string and copies the content of s to it.Returns the new str
+*/
+
 char	*ft_strdup(const char *s)
 {
 	int		i;

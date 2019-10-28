@@ -1,8 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 11:13:32 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/28 11:13:34 by hlaineka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-//takes as a parameter a string and returns its value as an integer
-//removes all whitespace in front of the strings and takes into account
-//minus and plus signs
+/*
+** takes as a parameter a string and returns its value as an integer
+** removes all whitespace in front of the strings and takes into account
+** minus and plus signs
+*/
+
 static int	is_whitespace(const char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n'
@@ -24,7 +39,7 @@ int			ft_atoi(const char *str)
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
-		if(str[i] == '-')
+		if (str[i] == '-')
 			negative_multiplier = -1;
 		i++;
 	}

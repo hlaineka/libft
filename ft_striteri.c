@@ -1,46 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 12:32:47 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/28 13:52:36 by hlaineka         ###   ########.fr       */
+/*   Created: 2019/10/28 13:56:52 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/28 16:41:59 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** copies num characters from dest to src. works also on overlapping memory
-** areas
+** Applies the function f to each character of the string passed as argument
+** and passes its index as the first asgument. Each character is passed by
+** address to f to be modified if necessary
 */
 
-void	*ft_memmove(void *dest, const void *src, size_t num)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned char		*temp_dest;
-	unsigned const char	*temp_src;
-	unsigned int		i;
+	int i;
 
-	temp_dest = dest;
-	temp_src = src;
 	i = 0;
-	if (temp_dest < temp_src)
+	if (s != NULL)
 	{
-		while (i < num)
+		while (s[i] != '\0')
 		{
-			temp_dest[i] = temp_src[i];
+			f(i, &(s[i]));
 			i++;
 		}
 	}
-	else
-	{
-		while (num > 0)
-		{
-			temp_dest[num - 1] = temp_src[num - 1];
-			num--;
-		}
-	}
-	return (dest);
 }

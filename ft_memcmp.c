@@ -12,11 +12,16 @@
 
 #include "libft.h"
 
-int	ft_memcmp (const void *ptr1, const void *ptr2, size_t num)
+/*
+** compares the first num bytes of the two ptr:s and returns zero if they
+** are equal or a number representing which is greater
+*/
+
+int	ft_memcmp(const void *ptr1, const void *ptr2, size_t num)
 {
 	const unsigned char	*temp_ptr1;
 	const unsigned char *temp_ptr2;
-	
+
 	temp_ptr1 = ptr1;
 	temp_ptr2 = ptr2;
 	if (num == 0)

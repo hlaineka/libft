@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 12:26:07 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/28 12:26:09 by hlaineka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-//searches through n characters of str1, or until reaches \0
-//for an occurance of str2
+/*
+** searches through n characters of str1, or until reaches \0
+** for an occurance of str2
+*/
 
 char	*ft_strnstr(const char *str1, const char *str2, size_t n)
 {
@@ -14,10 +28,10 @@ char	*ft_strnstr(const char *str1, const char *str2, size_t n)
 		return ((char*)str1);
 	while (str1[i] != '\0' && i < n)
 	{
-		while(str2[w] != '\0' && str1[i + w] != '\0'
-				&& (i + w) < n && str2[w] == str1[i + w])
+		while (str2[w] != '\0' && str1[i + w] != '\0'
+			&& (i + w) < n && str2[w] == str1[i + w])
 		{
-			if(str2[w + 1] == '\0')
+			if (str2[w + 1] == '\0')
 				return ((char*)&str1[i]);
 			w++;
 		}

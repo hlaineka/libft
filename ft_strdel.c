@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/28 12:20:26 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/28 12:20:29 by hlaineka         ###   ########.fr       */
+/*   Created: 2019/10/28 10:09:52 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/28 11:05:02 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Appends max num characters of src to dest
+** Frees the string give as parameter and sets the pointer to NULL
 */
 
-char	*ft_strncat(char *dest, const char *src, size_t num)
+void	ft_strdel(char **as)
 {
-	unsigned int	i;
-	unsigned int	w;
-
-	i = 0;
-	w = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[w] != '\0' && w < num)
+	if (as != NULL && *as != NULL)
 	{
-		dest[i] = src[w];
-		w++;
-		i++;
+		free(*as);
+		*as = NULL;
 	}
-	dest[i] = '\0';
-	return (dest);
 }

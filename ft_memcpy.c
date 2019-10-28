@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** copies num characters from dest to src
+*/
+
 void	*ft_memcpy(void *dest, const void *src, size_t num)
 {
 	unsigned char		*temp_dest;
@@ -24,5 +28,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t num)
 		temp_dest[num - 1] = temp_src[num - 1];
 		num--;
 	}
-	return(dest);
+	return (dest);
 }
