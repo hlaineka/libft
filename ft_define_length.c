@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-** counts how many numbers an integer has
+** counts how many characters  an integer has
 */
 
 int	ft_define_length(int n)

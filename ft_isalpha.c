@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-** Takes as a parameter c, and chekcs if c is an ascii alphabet.
+** Takes as a parameter c, and checks if c is an ascii alphabet.
 ** returns one if c is alphabet, and zero if it is not.
 */
 

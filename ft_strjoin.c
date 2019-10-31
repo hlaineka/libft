@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** Creates a new string where it combines the two strings given as parameters
+*/
+
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	unsigned int	i;

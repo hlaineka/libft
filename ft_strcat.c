@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-** appends a copy of the src to dest, with terminating null-character
+** appends a copy of the src to dest, with terminating null-character.
 ** dests terminating null is overwritten. dest and src should not overlap
 */
 

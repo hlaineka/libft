@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/* 
+** Adds a new string to string array. When using with  empty strarray, set the
+** pointer to NULL
+*/
+
 char	**ft_addstr(char **dest, char *src)
 {
 	int		i;
@@ -24,7 +29,7 @@ char	**ft_addstr(char **dest, char *src)
 		while (dest[i] != NULL)
 			i++;
 	}
-	returnable = (char**)malloc(sizeof(dest) + sizeof(src) + sizeof(char) * 2);
+	returnable = (char**)malloc(sizeof(char*) * (i + 1));
 	w = 0;
 	while (w < i)
 	{

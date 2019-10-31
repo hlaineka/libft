@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-** copies no more than n bytes from memory are src to dest, stopping when
+** copies no more than n bytes from memory src to dest, stopping when
 ** char c is found
 */
 

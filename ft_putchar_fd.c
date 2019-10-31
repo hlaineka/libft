@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-** prints character to fd output
+** prints character c to fd output
 */
 
 void	ft_putchar_fd(char c, int fd)

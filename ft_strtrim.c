@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+/*
+** Allocates and returns a copy of the string given as argument without 
+** whitespsaces at the beginning or at the end of string. Will be considered as
+** whitespaces the following characters ' ', '\n', '\t'. If S has no white-
+** spaces at the beginning or at the ends, the function returns a copy of S.
+** if allocation fails the function returns NULL
+*/
+
 static int	is_whitespace(char c)
 {
 	if (c == ' ' || c == '\n' || c == '\t')

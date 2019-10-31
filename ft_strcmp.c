@@ -14,7 +14,7 @@
 
 /*
 ** compares str1 to str2 and return 0 if they are aqual or int representing
-** the difference.
+** the difference. Recursive function.
 */
 
 int	ft_strcmp(const char *str1, const char *str2)

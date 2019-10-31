@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/* 
+** compares two strings and returns 0 if they are not equal and 1 if they are
+*/
+
 int	ft_strequ(char const *s1, char const *s2)
 {
 	if (ft_strcmp(s1, s2) != 0)

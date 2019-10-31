@@ -12,6 +12,12 @@
 
 #include "libft.h"
 
+/* 
+** Allocates and returns an array of "fresh" strings (all ending with '\0'
+** including the array itself) obtained by splitting s using the character c
+** as a delimeter. I the allocation fails, the function returns NULL
+*/
+
 static int	number_of_words(const char *s, char c)
 {
 	int	i;

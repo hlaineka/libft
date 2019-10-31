@@ -12,6 +12,12 @@
 
 #include "libft.h"
 
+/* 
+** creates a new t_list variable with given content and size. If content is
+** NULL, is pointer to content set to NULL and size to zero. Pointer to next
+** is always set to NULL
+*/
+
 t_list	*ft_lstnew(const void *content, size_t content_size)
 {
 	t_list	*returnable;

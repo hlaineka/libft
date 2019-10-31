@@ -14,7 +14,7 @@
 
 /*
 ** compares the first num bytes of the two ptr:s and returns zero if they
-** are equal or a number representing which is greater
+** are equal or a number representing which is greater. Recursive function
 */
 
 int	ft_memcmp(const void *ptr1, const void *ptr2, size_t num)
