@@ -6,7 +6,7 @@
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 17:13:51 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/28 17:13:54 by hlaineka         ###   ########.fr       */
+/*   Updated: 2019/10/29 11:18:26 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 			returnable[i] = f(i, s[i]);
 			i++;
 		}
+		returnable[i] = '\0';
 	}
 	return (returnable);
 }

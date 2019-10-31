@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_define_length.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 12:50:48 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/21 13:16:18 by hlaineka         ###   ########.fr       */
+/*   Created: 2019/10/29 10:28:47 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/29 11:15:34 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** prints string s to fd
+** counts how many numbers an integer has
 */
 
-void	ft_putstr_fd(char const *s, int fd)
+int	ft_define_length(int n)
 {
-	int	i;
+	int i;
 
-	i = 0;
-	if (fd >= 0)
+	i = 1;
+	if (n == T_INT_MIN)
 	{
-		while (s[i] != '\0')
-		{
-			ft_putchar_fd(s[i], fd);
-			i++;
-		}
+		i = i + 2;
+		n = 147483648;
 	}
+	if (n < 0)
+	{
+		i++;
+		n = n * (-1);
+	}
+	while ((n / 10) > 0)
+	{
+		i++;
+		n = n / 10;
+	}
+	return (i);
 }

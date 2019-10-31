@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_addstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 12:50:48 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/21 13:16:18 by hlaineka         ###   ########.fr       */
+/*   Created: 2019/10/30 11:54:01 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/30 11:55:13 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** prints string s to fd
-*/
-
-void	ft_putstr_fd(char const *s, int fd)
+char	**ft_addstr(char **dest, char *src)
 {
-	int	i;
+	int		i;
+	int		w;
+	char	**returnable;
 
 	i = 0;
-	if (fd >= 0)
+	if (dest)
 	{
-		while (s[i] != '\0')
-		{
-			ft_putchar_fd(s[i], fd);
+		while (dest[i] != NULL)
 			i++;
-		}
 	}
+	returnable = (char**)malloc(sizeof(dest) + sizeof(src) + sizeof(char) * 2);
+	w = 0;
+	while (w < i)
+	{
+		returnable[w] = ft_strdup(dest[w]);
+		w++;
+	}
+	returnable[w] = ft_strdup(src);
+	returnable[w + 1] = NULL;
+	free(dest);
+	return (returnable);
 }

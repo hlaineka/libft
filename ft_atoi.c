@@ -18,14 +18,6 @@
 ** minus and plus signs
 */
 
-static int	is_whitespace(const char c)
-{
-	if (c == ' ' || c == '\t' || c == '\n'
-		|| c == '\v' || c == '\f' || c == '\r')
-		return (1);
-	return (0);
-}
-
 int			ft_atoi(const char *str)
 {
 	int i;
@@ -35,7 +27,7 @@ int			ft_atoi(const char *str)
 	i = 0;
 	negative_multiplier = 1;
 	returnable = 0;
-	while (is_whitespace(str[i]))
+	while (ft_is_whitespace(str[i]))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{

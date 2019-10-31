@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 12:50:48 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/21 13:16:18 by hlaineka         ###   ########.fr       */
+/*   Created: 2019/10/29 14:15:51 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/31 11:43:32 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** prints string s to fd
-*/
-
-void	ft_putstr_fd(char const *s, int fd)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	w;
+	char			*returnable;
 
-	i = 0;
-	if (fd >= 0)
+	if (s1 && s2)
 	{
-		while (s[i] != '\0')
+		if (NULL != (returnable = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
 		{
-			ft_putchar_fd(s[i], fd);
-			i++;
+			i = 0;
+			w = 0;
+			while (s1[i] != '\0')
+			{
+				returnable[i] = s1[i];
+				i++;
+			}
+			while (s2[w] != '\0')
+			{
+				returnable[i++] = s2[w++];
+			}
+			returnable[i] = '\0';
 		}
+		return (returnable);
 	}
+	return (NULL);
 }

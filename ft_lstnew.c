@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 12:50:48 by hlaineka          #+#    #+#             */
-/*   Updated: 2019/10/21 13:16:18 by hlaineka         ###   ########.fr       */
+/*   Created: 2019/10/30 14:11:40 by hlaineka          #+#    #+#             */
+/*   Updated: 2019/10/30 17:06:33 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** prints string s to fd
-*/
-
-void	ft_putstr_fd(char const *s, int fd)
+t_list	*ft_lstnew(const void *content, size_t content_size)
 {
-	int	i;
+	t_list	*returnable;
+	char	*temp_content;
 
-	i = 0;
-	if (fd >= 0)
+	if ((returnable = (t_list*)malloc(sizeof(t_list))))
 	{
-		while (s[i] != '\0')
+		if (!content)
 		{
-			ft_putchar_fd(s[i], fd);
-			i++;
+			returnable->content = NULL;
+			returnable->content_size = 0;
 		}
+		else
+		{
+			temp_content = ft_strdup(content);
+			returnable->content = (void*)temp_content;
+			returnable->content_size = content_size;
+		}
+		returnable->next = NULL;
+		return (returnable);
 	}
+	return (NULL);
 }

@@ -23,10 +23,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t num)
 
 	temp_dest = dest;
 	temp_src = src;
-	while (num > 0)
+	if (dest && src)
 	{
-		temp_dest[num - 1] = temp_src[num - 1];
-		num--;
+		while (num > 0)
+		{
+			temp_dest[num - 1] = temp_src[num - 1];
+			num--;
+		}
 	}
 	return (dest);
 }
