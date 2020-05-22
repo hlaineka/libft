@@ -6,7 +6,7 @@
 /*   By: helvi <helvi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 11:58:27 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/03/17 11:15:14 by helvi            ###   ########.fr       */
+/*   Updated: 2020/05/20 09:55:54 by helvi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdint.h>
+# include "ft_printf.h"
 # define T_INT_MAX 2147483647
 # define T_INT_MIN -2147483648
 # define BUFF_SIZE 8
@@ -96,6 +97,11 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list*elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list				*ft_lstsrc(const void *content, t_list *beginning);
+void				ft_lstnewtoend(const void *content, size_t content_size, 
+					t_list **beginning);
+t_list				*ft_lstend(t_list *beginning);
+void				ft_lstaddafter(t_list *end, t_list *newelem);
 
 /*
 ** Own adds.

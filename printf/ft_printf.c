@@ -6,7 +6,7 @@
 /*   By: helvi <helvi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 12:23:03 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/05/19 09:33:40 by helvi            ###   ########.fr       */
+/*   Updated: 2020/05/19 13:24:04 by helvi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,6 @@ int			ft_printf(const char *format, ...)
 		else
 			printable = make_string(printable, format[i++]);
 	}
-	ft_putchar('c');
 	printer(printable, &printed);
 	free(command);
 	va_end(source);

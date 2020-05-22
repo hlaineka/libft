@@ -6,7 +6,7 @@
 #    By: helvi <helvi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/16 12:22:46 by hlaineka          #+#    #+#              #
-#    Updated: 2020/05/19 09:35:57 by helvi            ###   ########.fr        #
+#    Updated: 2020/05/19 13:11:08 by helvi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,6 @@ all: $(NAME)
 
 $(NAME):
 	gcc -c -Wall -Wextra -Werror $(SRCS) $(INC_LIBFT) $(INC_PRINTF)
-	ar rc $(NAME) $(INC_LIBFTA) $(OBJ)
-	make clean
 
 main: re
 	gcc main.c -o test libftprintf.a

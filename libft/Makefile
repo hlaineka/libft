@@ -6,7 +6,7 @@
 #    By: helvi <helvi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 12:00:35 by hlaineka          #+#    #+#              #
-#    Updated: 2020/05/19 09:36:41 by helvi            ###   ########.fr        #
+#    Updated: 2020/05/20 17:44:12 by helvi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,13 @@ ft_strchr.c ft_strrchr.c ft_strstr.c ft_strnstr.c ft_strcmp.c ft_strncmp.c \
 ft_atoi.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 ft_toupper.c ft_tolower.c ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c \
 ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c ft_is_whitespace.c \
-ft_define_length.c  ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c \
+ft_define_length.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c \
 ft_strsplit.c ft_addstr.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
-ft_lstiter.c ft_lstmap.c ft_strpaste.c ft_strset.c get_next_line.c \
-ft_str_realloc.c ft_dynamic_string.c ft_strjoin_frees2.c ft_itoa_uint.c\
-ft_strpaste_digits.c ft_char_str_join.c ft_strsub_freestr.c ft_strpaste_end.c \
-ft_itoa_hexa.c ft_itoa_float.c
+ft_lstiter.c ft_lstmap.c ft_strpaste.c ft_strset.c ft_itoa_base.c get_next_line.c \
+ft_itoa_uint.c ft_str_realloc.c ft_dynamic_string.c ft_strpaste_end.c\
+ft_strjoin_frees2.c ft_strpaste_digits.c ft_char_str_join.c ft_strsub_freestr.c \
+ft_itoa_hexa.c ft_itoa_float.c ft_str_char_join.c ft_lstsrc.c ft_lstnewtoend.c \
+ft_lstend.c ft_lstaddafter.c
  
 OSRC = $(SRC:.c=.o)
 
@@ -36,8 +37,6 @@ all: $(NAME)
 
 $(NAME): fclean
 	gcc -c -Wall -Wextra -Werror -I$(INC_LIBFT) $(SRC)
-	ar rc $(NAME) $(OSRC)
-	make clean
 
 clean:
 	rm -f $(OSRC)
