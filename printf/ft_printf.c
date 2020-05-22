@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helvi <helvi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 12:23:03 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/05/19 13:24:04 by helvi            ###   ########.fr       */
+/*   Updated: 2020/03/12 12:19:55 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 static int	selector(t_tags *command, va_list *source)
 {
@@ -87,30 +87,10 @@ static int	check_command(const char *format, t_tags *command, va_list *source)
 	return (w);
 }
 
-static char	*make_string(char *printable, char c)
+static int	printer(char c, int printed)
 {
-	char	*returnable;
-	
-	if (!printable)
-	{	
-		returnable = (char*)malloc(sizeof(char) * 2);
-		returnable[0] = c;
-		returnable[1] = '\0';
-	}
-	else
-		returnable = ft_str_char_join(c, printable);
-	return(returnable);
-}
-
-void		printer(char *string, int *printed)
-{
-	if (string)
-	{
-		ft_putstr(string);
-		*printed = *printed + ft_strlen(string);
-		free(string); 
-		string = NULL;
-	}
+	ft_putchar(c);
+	return (printed + 1);
 }
 
 int			ft_printf(const char *format, ...)
@@ -119,18 +99,15 @@ int			ft_printf(const char *format, ...)
 	int		i;
 	t_tags	*command;
 	int		printed;
-	char	*printable;
 
 	va_start(source, format);
 	command = (t_tags*)malloc(sizeof(t_tags));
 	printed = 0;
 	i = 0;
-	printable = NULL;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			printer(printable, &printed);
 			initialize_command(command);
 			i = i + check_command(&format[i], command, &source) + 1;
 			if (command->empty)
@@ -138,9 +115,8 @@ int			ft_printf(const char *format, ...)
 			printed = printed + selector(command, &source);
 		}
 		else
-			printable = make_string(printable, format[i++]);
+			printed = printer(format[i++], printed);
 	}
-	printer(printable, &printed);
 	free(command);
 	va_end(source);
 	return (printed);

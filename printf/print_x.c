@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_x.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helvi <helvi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 12:25:10 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/05/19 09:33:29 by helvi            ###   ########.fr       */
+/*   Updated: 2020/03/12 10:38:39 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 static char	*hexa_width(char *string, int width, t_tags *command)
 {
