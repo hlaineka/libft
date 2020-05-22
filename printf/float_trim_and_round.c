@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   float_trim_and_round.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlaineka <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: helvi <helvi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 10:25:02 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/03/12 10:27:17 by hlaineka         ###   ########.fr       */
+/*   Updated: 2020/05/22 09:47:36 by helvi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 char			*ft_trim(char *str, t_tags *command)
 {
