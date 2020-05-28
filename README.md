@@ -2,6 +2,7 @@
 basic c library written by me at Hive Helsinki. We are required to write out own functions to deepen our knowledge. This in an ongoing project that started with basic functions but I'm adding new useful ones in every project I make.
 
 ## The libft project
+[Subject for this project](libft.en.pdf)
 
 ### Basic functions required in the libft project:
 - ft_putchar
