@@ -1,7 +1,9 @@
 # libft
 basic c library written by me at Hive Helsinki. We are required to write out own functions to deepen our knowledge. This in an ongoing project that started with basic functions but I'm adding new useful ones in every project I make.
 
-###Basic functions required in the libft project:
+## The libft project
+
+### Basic functions required in the libft project:
 - ft_putchar
 - ft_putchar_fd
 - ft_putstr
@@ -54,3 +56,15 @@ basic c library written by me at Hive Helsinki. We are required to write out own
 - ft_strjoin
 - ft_strtrim
 - ft_strsplit
+
+## Basic list functions required in the libft project with few own add ons
+- ft_lstnew
+- ft_lstdelone
+- ft_lstdel
+- ft_lstadd
+- ft_lstiter
+- ft_lstmap
+- ft_lstsrc
+- ft_lstnewtoend
+- ft_lstend
+- ft_lstaddafter
