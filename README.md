@@ -71,16 +71,16 @@ basic c library written by me at Hive Helsinki. We are required to write out own
 - ft_lstaddafter
 
 ### My own add ons to the library
-- ft_dynamic_string     //dynamic allocation when adding more characters to a string
-- ft_addstr             //adding a string to a string array and allocating enough space for it
-- ft_define_length      //defines how many digits the is to a integer number
-- ft_is_whitespace      //returns the index of  the first whitespace
-- ft_str_realloc        //reallocs a new string made from starting index to ending index of the old one
-- ft_strset             //creates a new string of given nunmber of characters, initialized with given character
-- ft_strpaste           //pastes the characters of a string, does not include nullbyte. can be used to insert string inside a string
-- ft_strjoin_frees2     //joins two strings and frees one of them
-- ft_strpaste_digits    //pastes only digits from given string to destination
-- ft_char_str_join      //joins two character strings
-- ft_strsub_freestr     //returns a string starting from given index with the length given, and frees the given string
-- ft_strpaste_end       //pastes the source string to the end of the destination string
-- ft_str_char_join      //appends a string with a given character
+- ft_dynamic_string     *//dynamic allocation when adding more characters to a string*
+- ft_addstr             *//adding a string to a string array and allocating enough space for it*
+- ft_define_length      *//defines how many digits the is to a integer number*
+- ft_is_whitespace      *//returns the index of  the first whitespace*
+- ft_str_realloc        *//reallocs a new string made from starting index to ending index of the old one*
+- ft_strset             *//creates a new string of given nunmber of characters, initialized with given character*
+- ft_strpaste           *//pastes the characters of a string, does not include nullbyte. can be used to insert string inside a string*
+- ft_strjoin_frees2     *//joins two strings and frees one of them*
+- ft_strpaste_digits    *//pastes only digits from given string to destination*
+- ft_char_str_join      *//joins two character strings*
+- ft_strsub_freestr     *//returns a string starting from given index with the length given, and frees the given string*
+- ft_strpaste_end       *//pastes the source string to the end of the destination string*
+- ft_str_char_join      *//appends a string with a given character*
