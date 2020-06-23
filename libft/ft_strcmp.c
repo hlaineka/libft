@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helvi <helvi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 12:12:38 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/05/19 09:15:26 by helvi            ###   ########.fr       */
+/*   Updated: 2020/06/18 10:43:08 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	ft_strcmp(const char *str1, const char *str2)
 	i = 0;
 	while (str1[i] != '\0' && str2[i] != '\0' && str1[i] == str2[i])
 		i++;
-	return ((unsigned char)str1[0] - (unsigned char)str2[0]);
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }

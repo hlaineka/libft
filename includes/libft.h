@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helvi <helvi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 11:58:27 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/05/20 09:55:54 by helvi            ###   ########.fr       */
+/*   Updated: 2020/06/18 10:53:08 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char				**ft_strsplit(const char *s, char c);
 t_list				*ft_lstnew(const void *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstadd(t_list **alst, t_list *new_list);
 void				ft_lstiter(t_list *lst, void (*f)(t_list*elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstsrc(const void *content, t_list *beginning);
@@ -102,6 +102,10 @@ void				ft_lstnewtoend(const void *content, size_t content_size,
 					t_list **beginning);
 t_list				*ft_lstend(t_list *beginning);
 void				ft_lstaddafter(t_list *end, t_list *newelem);
+void				ft_lst_merge_sort(t_list **first, int (*f)(t_list *elem_a, t_list *elem_b));
+void				ft_lst_split(t_list *first, t_list **a, t_list **b);
+int					ft_lst_length(t_list *first);
+t_list				*ft_lst_sorted_merge(t_list *a, t_list *b, int (*f)(t_list *elem_a, t_list *elem_b));
 
 /*
 ** Own adds.
@@ -120,6 +124,7 @@ char				*ft_char_str_join(char c, char *s1);
 char				*ft_strsub_freestr(char *s, unsigned int start, size_t len);
 void				ft_strpaste_end(char *dest, char *src);
 char				*ft_str_char_join(char c, char *s1);
+char				ft_strlast(char const *str);
 
 /*
 ** Different itoa functions to handle different data types

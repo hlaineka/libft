@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lst_merge_sort.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/03 11:19:59 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/06/18 10:59:45 by hlaineka         ###   ########.fr       */
+/*   Created: 2020/06/18 10:42:51 by hlaineka          #+#    #+#             */
+/*   Updated: 2020/06/18 10:42:52 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new_list)
+void	ft_lst_merge_sort(t_list **first, int (*f)(t_list *elem_a, t_list *elem_b))
 {
-	new_list->next = *alst;
-	*alst = new_list;
+	t_list	*a;
+	t_list	*b;
+
+	a = (t_list*)malloc(sizeof(t_list*));
+	b = (t_list*)malloc(sizeof(t_list*));
+	a = NULL;
+	b = NULL;
+	if (!first || !first[0] || !first[0]->next)
+		return ;
+	ft_lst_split(*first, &a, &b);
+	ft_lst_merge_sort(&a, f);
+	ft_lst_merge_sort(&b, f);
+	*first = ft_lst_sorted_merge(a, b, f);
 }

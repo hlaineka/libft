@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_strlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/03 11:19:59 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/06/18 10:59:45 by hlaineka         ###   ########.fr       */
+/*   Created: 2020/06/18 10:42:46 by hlaineka          #+#    #+#             */
+/*   Updated: 2020/06/18 10:42:48 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new_list)
+/*
+** Finds the last character of string and returns it.
+*/
+
+char	ft_strlast(char const *str)
 {
-	new_list->next = *alst;
-	*alst = new_list;
+	int	i;
+
+	i = 0;
+	if (str)
+	{
+		while (str[i])
+			i++;
+		return (str[i - 1]);
+	}
+	return (0);
 }

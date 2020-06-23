@@ -6,7 +6,7 @@
 #    By: helvi <helvi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 12:00:35 by hlaineka          #+#    #+#              #
-#    Updated: 2020/05/20 17:44:12 by helvi            ###   ########.fr        #
+#    Updated: 2020/06/17 10:30:18 by helvi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ ft_lstiter.c ft_lstmap.c ft_strpaste.c ft_strset.c ft_itoa_base.c get_next_line.
 ft_itoa_uint.c ft_str_realloc.c ft_dynamic_string.c ft_strpaste_end.c\
 ft_strjoin_frees2.c ft_strpaste_digits.c ft_char_str_join.c ft_strsub_freestr.c \
 ft_itoa_hexa.c ft_itoa_float.c ft_str_char_join.c ft_lstsrc.c ft_lstnewtoend.c \
-ft_lstend.c ft_lstaddafter.c
+ft_lstend.c ft_lstaddafter.c ft_lst_merge_sort.c ft_lst_split.c ft_lst_length.c \
+ft_lst_sorted_merge.c ft_strlast.c
  
 OSRC = $(SRC:.c=.o)
 
@@ -40,6 +41,7 @@ $(NAME): fclean
 
 clean:
 	rm -f $(OSRC)
+	rm -f *.o
 
 fclean: clean
 	rm -f $(NAME)
