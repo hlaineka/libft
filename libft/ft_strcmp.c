@@ -6,7 +6,7 @@
 /*   By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 12:12:38 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/06/18 10:43:08 by hlaineka         ###   ########.fr       */
+/*   Updated: 2020/09/16 20:20:29 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 ** compares str1 to str2 and return 0 if they are aqual or int representing
-** the difference. 
+** the difference.
 */
 
 int	ft_strcmp(const char *str1, const char *str2)

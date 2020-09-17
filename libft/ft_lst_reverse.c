@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdellast.c                                    :+:      :+:    :+:   */
+/*   ft_lst_reverse.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 20:28:08 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/09/16 20:28:10 by hlaineka         ###   ########.fr       */
+/*   Created: 2020/09/01 16:18:09 by hlaineka          #+#    #+#             */
+/*   Updated: 2020/09/01 16:18:36 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_lstdellast(t_list **first)
+t_list	*ft_lst_reverse(t_list **first)
 {
-	t_list	*temp;
-	t_list	*last;
+	t_list	*temp_previous;
+	t_list	*temp_this;
+	t_list	*temp_next;
 
-	temp = NULL;
-	last = first;
-	while (last != NULL && last->next != NULL)
+	temp_previous = *first;
+	temp_this = temp_previous->next;
+	temp_previous->next = NULL;
+	while (temp_this)
 	{
-		temp = last;
-		last = last->next;
+		temp_next = temp_this->next;
+		temp_this->next = temp_previous;
+		temp_previous = temp_this;
+		temp_this = temp_next;
 	}
+	*first = temp_previous;
+	return (temp_previous);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsrc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/09/16 20:13:38 by hlaineka          #+#    #+#             */
+/*   Updated: 2020/09/16 20:17:28 by hlaineka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/libft.h"
 
 /*
@@ -8,7 +20,7 @@
 t_list	*ft_lstsrc(const void *content, t_list *beginning)
 {
 	t_list	*returnable;
-	
+
 	returnable = beginning;
 	while (returnable != NULL && !ft_strequ(returnable->content, content))
 		returnable = returnable->next;

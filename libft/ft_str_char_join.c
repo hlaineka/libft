@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_char_join.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/09/16 20:15:53 by hlaineka          #+#    #+#             */
+/*   Updated: 2020/09/16 20:16:18 by hlaineka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/libft.h"
 
 /*
@@ -13,7 +25,7 @@ char	*ft_str_char_join(char c, char *s1)
 
 	if (s1)
 	{
-		if (NULL != (returnable = (char*)malloc(sizeof(char) 
+		if (NULL != (returnable = (char*)malloc(sizeof(char)
 					* (ft_strlen(s1) + 2))))
 		{
 			i = 0;

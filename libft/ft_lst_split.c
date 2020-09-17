@@ -21,7 +21,7 @@ void	ft_lst_split(t_list *first, t_list **a, t_list **b)
 	*a = first;
 	*b = NULL;
 	if (!first || !first->next)
-		return;
+		return ;
 	w = ft_lst_length(first) / 2;
 	temp = *a;
 	i = 1;

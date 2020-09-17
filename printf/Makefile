@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: helvi <helvi@student.42.fr>                +#+  +:+       +#+         #
+#    By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/16 12:22:46 by hlaineka          #+#    #+#              #
-#    Updated: 2020/05/19 13:11:08 by helvi            ###   ########.fr        #
+#    Updated: 2020/09/03 13:33:52 by hlaineka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,47 +29,47 @@ INC_PRINTF = ../includes/ft_printf.h
 all: $(NAME)
 
 $(NAME):
-	gcc -c -Wall -Wextra -Werror $(SRCS) $(INC_LIBFT) $(INC_PRINTF)
+	@gcc -c -Wall -Wextra -Werror $(SRCS) $(INC_LIBFT) $(INC_PRINTF)
 
 main: re
-	gcc main.c -o test libftprintf.a
-	make clean
+	@gcc main.c -o test libftprintf.a
+	@make clean
 
 main_string: re
-	gcc mainft.c -o stringft libftprintf.a
-	gcc mainpf.c -o stringpf libftprintf.a
-	make clean
+	@gcc mainft.c -o stringft libftprintf.a
+	@gcc mainpf.c -o stringpf libftprintf.a
+	@make clean
 
 main_hex: re
-	gcc main_hexft.c -o hexft libftprintf.a
-	gcc main_hexpf.c -o hexpf libftprintf.a
-	make clean
+	@gcc main_hexft.c -o hexft libftprintf.a
+	@gcc main_hexpf.c -o hexpf libftprintf.a
+	@make clean
 
 main_int: re
-	gcc main_intft.c -o intft libftprintf.a
-	gcc main_intpf.c -o intpf libftprintf.a
-	make clean
+	@gcc main_intft.c -o intft libftprintf.a
+	@gcc main_intpf.c -o intpf libftprintf.a
+	@make clean
 
 main_float: re
-	gcc main_floatft.c -o floatft libftprintf.a
-	gcc main_floatpf.c -o floatpf libftprintf.a
-	make clean
+	@gcc main_floatft.c -o floatft libftprintf.a
+	@gcc main_floatpf.c -o floatpf libftprintf.a
+	@make clean
 	
 main_ansi: re
-	gcc main_ansi.c -o ansi libftprintf.a
-	make clean
+	@gcc main_ansi.c -o ansi libftprintf.a
+	@make clean
 
 compare:
-	gcc compare.c -o compare libftprintf.a
+	@gcc compare.c -o compare libftprintf.a
 
 clean:
-	rm -rf $(OBJ)
-	rm -rf *.o 
-	rm -rf *~
+	@rm -rf $(OBJ)
+	@rm -rf *.o 
+	@rm -rf *~
 
 fclean: clean
-	rm -rf *.o 
-	rm -rf ft_printf
-	rm -rf $(NAME)
+	@rm -rf *.o 
+	@rm -rf ft_printf
+	@rm -rf $(NAME)
 
 re: fclean all

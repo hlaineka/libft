@@ -25,7 +25,7 @@ char	*ft_char_str_join(char c, char *s1)
 
 	if (s1)
 	{
-		if (NULL != (returnable = (char*)malloc(sizeof(char) 
+		if (NULL != (returnable = (char*)malloc(sizeof(char)
 					* (ft_strlen(s1) + 1))))
 		{
 			i = 1;

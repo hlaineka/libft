@@ -20,6 +20,7 @@
 int	ft_strncmp(const char *str1, const char *str2, size_t num)
 {
 	int		i;
+
 	i = 0;
 	while (str1[i] != '\0' && str2[i] != '\0' && str1[i] != str2[i]
 			&& num >= 0)

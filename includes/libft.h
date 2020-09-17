@@ -6,7 +6,7 @@
 /*   By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 11:58:27 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/06/18 10:53:08 by hlaineka         ###   ########.fr       */
+/*   Updated: 2020/09/16 20:15:20 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,14 +98,17 @@ void				ft_lstadd(t_list **alst, t_list *new_list);
 void				ft_lstiter(t_list *lst, void (*f)(t_list*elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstsrc(const void *content, t_list *beginning);
-void				ft_lstnewtoend(const void *content, size_t content_size, 
+void				ft_lstnewtoend(const void *content, size_t content_size,
 					t_list **beginning);
 t_list				*ft_lstend(t_list *beginning);
 void				ft_lstaddafter(t_list *end, t_list *newelem);
-void				ft_lst_merge_sort(t_list **first, int (*f)(t_list *elem_a, t_list *elem_b));
+void				ft_lst_merge_sort(t_list **first, int (*f)(t_list *elem_a,
+					t_list *elem_b));
 void				ft_lst_split(t_list *first, t_list **a, t_list **b);
 int					ft_lst_length(t_list *first);
-t_list				*ft_lst_sorted_merge(t_list *a, t_list *b, int (*f)(t_list *elem_a, t_list *elem_b));
+t_list				*ft_lst_sorted_merge(t_list *a, t_list *b,
+					int (*f)(t_list *elem_a, t_list *elem_b));
+t_list				*ft_lst_reverse(t_list **first);
 
 /*
 ** Own adds.
@@ -119,6 +122,7 @@ char				*ft_str_realloc(char *src, int start, int end);
 char				*ft_strset(char value, size_t num);
 void				ft_strpaste(char *dest, char *src);
 char				*ft_strjoin_frees2(char *s1, char *s2);
+char				*ft_strjoin_frees1(char *s1, char *s2);
 void				ft_strpaste_digits(char *dest, char *src);
 char				*ft_char_str_join(char c, char *s1);
 char				*ft_strsub_freestr(char *s, unsigned int start, size_t len);

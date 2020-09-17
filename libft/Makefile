@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: helvi <helvi@student.42.fr>                +#+  +:+       +#+         #
+#    By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 12:00:35 by hlaineka          #+#    #+#              #
-#    Updated: 2020/06/17 10:30:18 by helvi            ###   ########.fr        #
+#    Updated: 2020/09/03 10:39:44 by hlaineka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ ft_itoa_uint.c ft_str_realloc.c ft_dynamic_string.c ft_strpaste_end.c\
 ft_strjoin_frees2.c ft_strpaste_digits.c ft_char_str_join.c ft_strsub_freestr.c \
 ft_itoa_hexa.c ft_itoa_float.c ft_str_char_join.c ft_lstsrc.c ft_lstnewtoend.c \
 ft_lstend.c ft_lstaddafter.c ft_lst_merge_sort.c ft_lst_split.c ft_lst_length.c \
-ft_lst_sorted_merge.c ft_strlast.c
+ft_lst_sorted_merge.c ft_strlast.c ft_lst_reverse.c ft_strjoin_frees1.c
  
 OSRC = $(SRC:.c=.o)
 
@@ -37,14 +37,14 @@ INC_LIBFT = ../includes/libft.h
 all: $(NAME)
 
 $(NAME): fclean
-	gcc -c -Wall -Wextra -Werror -I$(INC_LIBFT) $(SRC)
+	@gcc -c -Wall -Wextra -Werror -I$(INC_LIBFT) $(SRC)
 
 clean:
-	rm -f $(OSRC)
-	rm -f *.o
+	@rm -f $(OSRC)
+	@rm -f *.o
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 mclean: fclean
 

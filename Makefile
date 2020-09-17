@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: helvi <helvi@student.42.fr>                +#+  +:+       +#+         #
+#    By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 12:00:35 by hlaineka          #+#    #+#              #
-#    Updated: 2020/05/19 13:14:18 by helvi            ###   ########.fr        #
+#    Updated: 2020/09/03 10:39:17 by hlaineka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,18 +23,18 @@ INC_PRINTF = includes/ft_printf.h
 all: $(NAME)
 
 $(NAME): fclean
-	cd libft && make re
-	cd printf && make re
-	ar rc $(NAME) $(OSRC_LIBFT) $(OSRC_PRINTF) $(INC_LIBFT) $(INC_PRINTF)
-	cd libft && make clean
-	cd printf && make clean
-	make clean
+	@cd libft && make re
+	@cd printf && make re
+	@ar rc $(NAME) $(OSRC_LIBFT) $(OSRC_PRINTF) $(INC_LIBFT) $(INC_PRINTF)
+	@cd libft && make clean
+	@cd printf && make clean
+	@make clean
 
 clean:
-	rm -f $(OSRC)
+	@rm -f $(OSRC)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 mclean: fclean
 

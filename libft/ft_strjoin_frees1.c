@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_frees2.c                                :+:      :+:    :+:   */
+/*   ft_strjoin_frees1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlaineka <hlaineka@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 12:43:29 by hlaineka          #+#    #+#             */
-/*   Updated: 2020/09/17 11:32:40 by hlaineka         ###   ########.fr       */
+/*   Updated: 2020/09/16 20:21:54 by hlaineka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Frees the string in s2.
 */
 
-char	*ft_strjoin_frees2(char *s1, char *s2)
+char	*ft_strjoin_frees1(char *s1, char *s2)
 {
 	unsigned int	i;
 	unsigned int	w;
@@ -38,7 +38,7 @@ char	*ft_strjoin_frees2(char *s1, char *s2)
 			while (s2[w] != '\0')
 				returnable[i++] = s2[w++];
 			returnable[i] = '\0';
-			free(s2);
+			free(s1);
 			return (returnable);
 		}
 	}
